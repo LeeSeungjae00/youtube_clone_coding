@@ -1,0 +1,41 @@
+
+.headerRapper{
+    position: fixed;
+    background-color: rgba(32, 32, 32, 0.616);
+    top: 0;
+    width: inherit;
+    height: 6vh;
+    display: flex;
+    gap: 20px;
+}
+
+.logoRapper{
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.3rem;
+    color: white;
+}
+
+.searchRapper{
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    margin: 5px;
+}
+
+.search{
+    height: 30px;
+    flex-grow: 1;
+    background: none;
+    border: 0.1rem solid #b1b1b1;
+}
+
+.searchButton{
+    height: 33px;
+    width: 33px;
+    border: none;
+    background-color: #ffffff00;
+    background-size: cover;
+}
