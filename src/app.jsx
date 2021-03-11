@@ -24,15 +24,14 @@ function App() {
       // .then(response => response.text())
       // .then(result => JSON.parse(result));
       // console.log(items);
-      return items
+      return result;
     } catch (error) {
       console.log(error)
     }
   },[])
 
   useEffect(() => {
-    const items =getPopular();
-    console.log(items); 
+    console.log(getPopular);
     return () => {
     }
   }, [getPopular])
