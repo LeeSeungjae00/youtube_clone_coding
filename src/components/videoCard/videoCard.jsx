@@ -7,8 +7,8 @@ export default function videoCard({info}) {
     return (
         <div className = "videoCard">
             <img style = {{width : 304, height : 171}} src= {thumbnails.medium.url}alt="thum"/>
-            <p>{title}</p>
-            <p>{channelTitle}</p>
+            <p style = {{width : 304}}>{title}</p>
+            <p style = {{widtj : 304}}>{channelTitle}</p>
         </div>
     )
 }
