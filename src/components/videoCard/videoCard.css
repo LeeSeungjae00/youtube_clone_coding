@@ -1,4 +1,8 @@
 .videoCard{
+    background-color: #000000cc;
     display: flex;
     flex-direction: column;
+    color: white;
+    border-radius: 0.5rem;
+    padding: 10px;
 }
