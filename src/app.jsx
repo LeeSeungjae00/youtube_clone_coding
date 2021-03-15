@@ -21,20 +21,20 @@ function App() {
       const result = await response.text();
       const {items} = await JSON.parse(result);
 
-      // .then(response => response.text())
-      // .then(result => JSON.parse(result));
-      // console.log(items);
-      return result;
+      setVideoList([1])
+      console.log(videoList)
+      return ;
     } catch (error) {
       console.log(error)
     }
   },[])
-
   useEffect(() => {
-    console.log(getPopular);
+    getPopular();
     return () => {
+      // cleanup
     }
-  }, [getPopular])
+  }, [])
+
   return (
     <>
       <HeaderRapper></HeaderRapper>
