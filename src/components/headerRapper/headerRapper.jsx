@@ -5,7 +5,7 @@ export default function HeaderRapper() {
     return (
         <div className={style.headerRapper}>
             <div className={style.logoRapper}>
-                <img src="./images/logo.png" alt="logo" />
+                {/* <img src="./images/logo.png" alt="logo" /> */}
             Youtube
             </div>
             <div className={style.searchRapper}>

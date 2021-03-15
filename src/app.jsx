@@ -1,7 +1,7 @@
-import './app.css';
+import './App.css';
 import React, { useCallback, useEffect, useState } from 'react'
-import HeaderRapper from './components/header-rapper/headerRapper';
-import MainContent from './components/main-content/mainContent'
+import HeaderRapper from './components/headerRapper/headerRapper';
+import MainContent from './components/mainContent/mainContent'
 
 const requestOptions = {
   method: 'GET',
@@ -21,9 +21,8 @@ function App() {
       const result = await response.text();
       const {items} = await JSON.parse(result);
 
-      setVideoList([1])
-      console.log(videoList)
-      return ;
+
+      setVideoList(items);
     } catch (error) {
       console.log(error)
     }
@@ -33,12 +32,12 @@ function App() {
     return () => {
       // cleanup
     }
-  }, [])
+  }, [getPopular])
 
   return (
     <>
       <HeaderRapper></HeaderRapper>
-      <MainContent></MainContent>
+      <MainContent videos = {videoList}></MainContent>
     </>
   );
 }
