@@ -15,9 +15,11 @@ const requestOptions = {
 
 function App() {
   const [videoList, setVideoList] = useState([]);
-  const getPopular = useCallback(async () => {
+  const [selectVideo, setSelectVideo] = useState('');
+
+  const getVideos = useCallback(async (url) => {
     try {
-      const response = await fetch("https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=24&regionCode=KR&key=AIzaSyCg2DIwaT5af8y1NmV-PoXMjqk4d_3cZXg", requestOptions)
+      const response = await fetch(url, requestOptions)
       const result = await response.text();
       const {items} = await JSON.parse(result);
 
@@ -28,14 +30,24 @@ function App() {
     }
   },[])
 
+  function handleSearch(url){
+    getVideos(url);
+    setSelectVideo('');
+  }
+
+  function handleVideoClick(id){
+    setSelectVideo(id);
+  }
+
   useEffect(() => {
-    getPopular();
+    getVideos("https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=24&regionCode=KR&key=AIzaSyCg2DIwaT5af8y1NmV-PoXMjqk4d_3cZXg");
     return () => {
     }
-  }, [getPopular])
+  }, [getVideos]);
+
   return (
     <>
-      <HeaderRapper></HeaderRapper>
+      <HeaderRapper onSearch = {handleSearch}></HeaderRapper>
       {/* <iframe 
       title = "video"
       width="560" height="315" 
@@ -46,7 +58,7 @@ function App() {
       encrypted-media; gyroscope; 
       picture-in-picture" 
       allowfullscreen></iframe> */}
-      <MainContent videos = {videoList}></MainContent>
+      <MainContent onVideoClick = {handleVideoClick} videos = {videoList}></MainContent>
     </>
   );
 }
