@@ -14,6 +14,14 @@
     margin-bottom: 0px;
     width: 294px;
     max-width: 294px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    display:-webkit-box;
+    -webkit-line-clamp:2; /* 라인수 */
+    -webkit-box-orient:vertical;
+    word-wrap:break-word;
+    line-height:18px;
+    height:36px;
 }
 
 .channelTitle{
