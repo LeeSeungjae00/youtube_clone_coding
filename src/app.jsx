@@ -42,6 +42,7 @@ function App() {
   useEffect(() => {
     getVideos("https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=24&regionCode=KR&key=AIzaSyCg2DIwaT5af8y1NmV-PoXMjqk4d_3cZXg");
     return () => {
+      // cleanup
     }
   }, [getVideos]);
 
