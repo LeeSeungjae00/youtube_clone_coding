@@ -1,4 +1,4 @@
-import './app.css';
+import './App.css';
 import React, { useCallback, useEffect, useState } from 'react'
 import HeaderRapper from './components/headerRapper/headerRapper';
 import MainContent from './components/mainContent/mainContent'
@@ -15,7 +15,9 @@ const requestOptions = {
 
 function App() {
   const [videoList, setVideoList] = useState([]);
-  const [selectVideo, setSelectVideo] = useState('');
+  const [selectVideo, setSelectVideo] = useState({
+    id : ''
+  });
 
   const getVideos = useCallback(async (url) => {
     try {
@@ -32,11 +34,13 @@ function App() {
 
   function handleSearch(url){
     getVideos(url);
-    setSelectVideo('');
+    setSelectVideo({
+      id : ''
+    });
   }
 
-  function handleVideoClick(id){
-    setSelectVideo(id);
+  function handleVideoClick(info){
+    setSelectVideo(info);
   }
 
   useEffect(() => {
@@ -59,7 +63,10 @@ function App() {
       encrypted-media; gyroscope; 
       picture-in-picture" 
       allowfullscreen></iframe> */}
-      <MainContent onVideoClick = {handleVideoClick} videos = {videoList}></MainContent>
+      <MainContent 
+        onVideoClick = {handleVideoClick} 
+        videos = {videoList}
+        selectVideo = {selectVideo}></MainContent>
     </>
   );
 }

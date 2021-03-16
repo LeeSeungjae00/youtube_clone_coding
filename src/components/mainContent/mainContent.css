@@ -1,0 +1,30 @@
+.mainContent{
+    margin-top: 6vh;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.playVideo{
+    display: grid;
+    gap: 10px;
+    justify-content: center;
+    grid-template-columns: 950px auto;
+}
+
+.videoArea{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.videoExplanation{
+    color: gray;
+    margin-top: 560px;
+    position: fixed;
+    width: 950px;
+}

@@ -5,7 +5,7 @@ export default function HeaderRapper({onSearch}) {
     const inputRef = useRef();
     return (
         <div className={style.headerRapper}>
-            <div className={style.logoRapper}>
+            <div className={style.logoRapper} onClick = {() => window.location.href = "/"}>
                 <img src="./images/logo.png" alt="logo" />
             Youtube
             </div>
