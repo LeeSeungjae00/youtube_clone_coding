@@ -14,7 +14,6 @@ export default function MainContent({ videos, onVideoClick, selectVideo }) {
                     title="video"
                     width="950"
                     height="534"
-                    style={{ position: "fixed" }}
                     src={`https://www.youtube.com/embed/${selectVideo.id}`}
                     frameborder="0"
                     allowFullScreen={true}
