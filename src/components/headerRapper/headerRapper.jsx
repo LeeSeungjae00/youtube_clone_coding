@@ -14,7 +14,6 @@ export default function HeaderRapper({ onSearch }) {
                     value = {serchVal} 
                     onChange = {(e)=> {setSerchVal(e.currentTarget.value)}}
                     className={style.search}>
-                
                 </input>
                 <button
                     onClick={() => {
