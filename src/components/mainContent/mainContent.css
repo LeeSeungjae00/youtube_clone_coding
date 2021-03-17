@@ -8,12 +8,22 @@
     justify-content: center;
 }
 
+
 .playVideo{
     display: grid;
     gap: 10px;
     justify-content: center;
     grid-template-columns: 950px auto;
 }
+
+
+@media screen and (max-width: 950px) {
+    .playVideo{
+        grid-template-columns: none;
+        grid-template-rows: auto auto;
+    }
+}
+
 
 .videoArea{
     width: 100%;
