@@ -1,4 +1,4 @@
-import './App.css';
+import './app.css';
 import React, { useCallback, useEffect, useState } from 'react'
 import HeaderRapper from './components/headerRapper/headerRapper';
 import MainContent from './components/mainContent/mainContent'
@@ -9,10 +9,6 @@ const requestOptions = {
   redirect: 'follow'
 };
 
-// fetch("https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=25&key=AIzaSyCg2DIwaT5af8y1NmV-PoXMjqk4d_3cZXg", requestOptions)
-//   .then(response => response.text())
-//   .then(result => console.log(result))
-//   .catch(error => console.log('error', error));
 
 function App() {
   const [videoList, setVideoList] = useState([]);
@@ -54,16 +50,6 @@ function App() {
   return (
     <>
       <HeaderRapper onSearch={handleSearch}></HeaderRapper>
-      {/* <iframe 
-      title = "video"
-      width="560" height="315" 
-      src="https://www.youtube.com/embed/Q88P1gpOJxA" 
-      frameborder="0" 
-      allow="accelerometer; 
-      autoplay; clipboard-write; 
-      encrypted-media; gyroscope; 
-      picture-in-picture" 
-      allowfullscreen></iframe> */}
       <MainContent 
         onVideoClick = {handleVideoClick} 
         videos = {videoList}
