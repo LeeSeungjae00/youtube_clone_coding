@@ -3,6 +3,7 @@ import React, { useCallback, useEffect, useState } from 'react'
 import HeaderRapper from './components/headerRapper/headerRapper';
 import MainContent from './components/mainContent/mainContent'
 
+
 const requestOptions = {
   method: 'GET',
   redirect: 'follow'
@@ -21,21 +22,21 @@ function App() {
     try {
       const response = await fetch(url, requestOptions)
       const result = await response.text();
-      const {items} = await JSON.parse(result);
+      const { items } = await JSON.parse(result);
 
 
       setVideoList(items);
     } catch (error) {
       console.log(error)
     }
-  },[])
+  }, [])
 
-  function handleSearch(url){
+  function handleSearch(url) {
     getVideos(url);
     setSelectVideo('');
   }
 
-  function handleVideoClick(id){
+  function handleVideoClick(id) {
     setSelectVideo(id);
   }
 
@@ -48,7 +49,7 @@ function App() {
 
   return (
     <>
-      <HeaderRapper onSearch = {handleSearch}></HeaderRapper>
+      <HeaderRapper onSearch={handleSearch}></HeaderRapper>
       {/* <iframe 
       title = "video"
       width="560" height="315" 
@@ -59,7 +60,7 @@ function App() {
       encrypted-media; gyroscope; 
       picture-in-picture" 
       allowfullscreen></iframe> */}
-      <MainContent onVideoClick = {handleVideoClick} videos = {videoList}></MainContent>
+      <MainContent onVideoClick={handleVideoClick} videos={videoList}></MainContent>
     </>
   );
 }
