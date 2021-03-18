@@ -32,8 +32,20 @@
     gap: 10px;
 }
 
+
 .videoExplanation{
     color: gray;
     margin-top: 10px;
     width: 950px;
+    padding: 5px;
+}
+
+.videoTitle{
+    color: white;
+    padding: 5px;
+}
+
+.channelName{
+    color: white;
+    padding: 5px;
 }

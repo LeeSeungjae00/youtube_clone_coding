@@ -25,7 +25,9 @@ export default function MainContent({ videos, onVideoClick, selectVideo }) {
                     gyroscope; 
                     picture-in-picture"
                 ></iframe>
-                {<div className = "videoExplanation">{selectVideo.snippet.description}</div>}
+                <h2 className = "videoTitle">{selectVideo.snippet.title}</h2>
+                <div className="channelName">{selectVideo.snippet.channelTitle}</div>
+                <div className = "videoExplanation">{selectVideo.snippet.description}</div>
             </div>}
             <div className="videoArea">
                 {videos.map((video) =>

@@ -8,6 +8,10 @@
     /* padding: 10px; */
 }
 
+.videoCard:hover{
+    background-color: black;
+}
+
 .title{
     padding-left: 5px;
     padding-right: 5px;

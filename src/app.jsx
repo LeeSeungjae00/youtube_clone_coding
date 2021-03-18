@@ -1,4 +1,4 @@
-import './app.css';
+import './App.css';
 import React, { useCallback, useEffect, useState } from 'react'
 import HeaderRapper from './components/headerRapper/headerRapper';
 import MainContent from './components/mainContent/mainContent'
